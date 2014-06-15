@@ -7,7 +7,7 @@ $(window).load(function() {
 	
 	position_container();
 	
-	$('#bottom').css('height',$(window).height());
+	$('#bottom').css('min-height',($(window).height()-10));
 });
 
 $(window).resize(function() {
@@ -24,16 +24,16 @@ $(window).scroll(throttle(function(event) {
 	set_fade();
 }, 250));
 
-$('#link').hover(function() {
-	$(this).css('text-decoration','underline');
-}, function() {
-	$(this).css('text-decoration','none');
-});
-
 $('#button').hover(function() {
 	$(this).animate({opacity:'1'},100);
 }, function() {
 	$(this).animate({opacity:'0.5'},100);
+});
+
+$('#link').hover(function() {
+	$(this).css('text-decoration','underline');
+}, function() {
+	$(this).css('text-decoration','none');
 });
 
 $('#button').click(function() {
